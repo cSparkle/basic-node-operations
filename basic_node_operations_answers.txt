@@ -1,0 +1,123 @@
+1. 
+sort) The terminal command sort works by sorting the file alphabetically by the first character in each line, including letters, numbers, and symbols.
+The output is each line rearranged in alphabetical order with the most nested lines being sorted first. In this way, the output is not necessarily
+truly alphabetical since each nested indent of code is sorted as a chunk. For example, the output of sort commands.js is:
+
+            break;
+            break;
+            commandLibrary.cat(userInputArray.slice(1));
+            commandLibrary.echo(userInputArray.slice(1).join(' '));
+            done(data);
+            if (err) throw err;
+        });
+        case 'cat':
+        case 'echo':
+        const fileName = fullPath[0];
+        done(userInput);
+        fs.readFile(fileName, (err, data) => {
+    }
+    }
+    },
+    'cat': function(fullPath) {
+    const command = userInputArray[0];
+    const userInputArray = userInput.split(' ');
+    'echo': function(userInput) {
+    process.stdout.write('\nprompt > ');
+    process.stdout.write(output);
+    switch(command) {
+
+
+
+
+
+};
+};
+};
+const commandLibrary = {
+const fs = require('fs');
+function done(output) {
+function evaluateCmd(userInput) {
+module.exports.commandLibrary = commandLibrary;
+module.exports.evaluateCmd = evaluateCmd;
+
+
+wc) The wc command counts the number of lines, words, and characters in a file in that order. Notably, the characters count also includes the new line (\n) value
+that is present at the end of each line. The output of wc commands.js is:
+
+ 35  72 899 commands.js
+
+
+uniq) Uniq outputs only those lines in a file that are entirely unique. If a line further down a file matches a line that has already been encountered, that
+line will not be outputed. In the case of commands.js, the uniq command does not remove any lines as none are unique. The output of uniq commands.js is:
+
+const fs = require('fs');
+
+function done(output) {
+    process.stdout.write(output);
+    process.stdout.write('\nprompt > ');
+};
+
+function evaluateCmd(userInput) {
+    const userInputArray = userInput.split(' ');
+    const command = userInputArray[0];
+
+    switch(command) {
+        case 'echo':
+            commandLibrary.echo(userInputArray.slice(1).join(' '));
+            break;
+        case 'cat':
+            commandLibrary.cat(userInputArray.slice(1));
+            break;
+    }
+};
+
+const commandLibrary = {
+    'echo': function(userInput) {
+        done(userInput);
+    },
+    'cat': function(fullPath) {
+        const fileName = fullPath[0];
+        fs.readFile(fileName, (err, data) => {
+            if (err) throw err;
+            done(data);
+        });
+    }
+};
+
+module.exports.commandLibrary = commandLibrary;
+module.exports.evaluateCmd = evaluateCmd;
+
+2. 
+
+a) The first command I will run is: cat commands.js | wc. This command performs the cat function defined within the commands.js file which outputs the entire contents
+of the file. This output is then "piped" to the wc command which counts the lines, words, and characters of the output and produces its own output comprised of this count.
+The output is: 
+
+     35      72     899
+
+b) The second command I ran is: sort bash.js | uniq. This command will first sort the bash.js file alphabetically and then "pipe" the output of this action to the uniq command
+which will remove any matching lines. Finally, the entire contents of the bash.js file after these actions are taken is outputed to the terminal. This output is:
+
+    commands.evaluateCmd(userInput);
+    userInput = userInput.toString().trim();
+
+});
+const commands = require('./commands.js');
+process.stdin.on('data', (userInput) => {
+process.stdout.write('prompt > ');
+
+
+6. 
+
+const reverse = string => {
+	let tempArray = string.split(' ');
+	var result = [];
+	tempArray.forEach(word => {
+		let reversedWord = word.split('');
+		reversedWord = reversedWord.reverse();
+		reversedWord = reversedWord.join('');
+		result.push(reversedWord);
+})
+	result = result.join(' ');
+	return result;
+}
